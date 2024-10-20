@@ -6,7 +6,7 @@
     <title>Món quà 20/10</title>
     <style>
         body {
-            background: url('https://images5.alphacoders.com/111/thumb-1920-1112711.jpg') no-repeat center center fixed;
+            background: url('https://img1.kienthucvui.vn/uploads/2019/10/09/hinh-anh-hoa-huong-duong-duoi-anh-hoang-hon_042952506.jpg') no-repeat center center fixed;
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -32,18 +32,36 @@
         }
 
         .sunflower-bouquet {
-            display: none; /* Ban đầu ẩn bó hoa */
-            margin-top: 10px;
+            display: none;
+            position: relative;
             width: 1000px;
-            height: 1000px;
+            height: 500px;
             background: url('https://i.imgur.com/zxYw6Nc.png') no-repeat center center;
             background-size: contain;
             cursor: pointer;
             transition: transform 0.3s;
+            margin-top: 20px;
+        }
+
+        .image-left, .image-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 400px;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-left {
+            left: -220px;
+        }
+
+        .image-right {
+            right: -220px;
         }
 
         .letter {
-            display: none; /* Ban đầu ẩn thư */
+            display: none;
             margin-top: 20px;
             padding: 30px;
             background-color: #fff8dc;
@@ -51,30 +69,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             cursor: pointer;
-            line-height: 2.5;
-        }
-
-        .images {
-            display: none; /* Ban đầu ẩn hình ảnh */
-            margin-top: 10px;
-  
-        }
-
-        .images img {
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .images img.small {
-            width: 80px; /* Kích thước hình ảnh 1 và 3 */
-       
-            margin: 100px;
-        }
-
-        .images img.large {
-            width: 200px; /* Kích thước hình ảnh 2 lớn hơn */
-            
-            
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -84,27 +79,24 @@
         <source src="1.mp3" type="audio/mpeg">
     </audio>
     <div class="gift-box" id="giftBox" onclick="openGift()"></div>
-    <div class="sunflower-bouquet" id="sunflowerBouquet"></div>
-    <div class="letter" id="letter" onclick="openLetter()">
-        "Nhân ngày 20/10, ... chúc Dứa 🍍thật hạnh phúc và tràn đầy yêu thương!💝 <br>
-                                                                         Còn tiếp ... Click zô"
+    <div class="sunflower-bouquet" id="sunflowerBouquet">
+        <img class="image-left" src="https://i.imgur.com/zAwIv12.png" alt="Hình 1">
+        <img class="image-right" src="https://i.imgur.com/pIHkAXZ.png" alt="Hình 2">
     </div>
-    <div class="images" id="images">
-        <img class="small" src="https://i.imgur.com/VtvMI9p.png" alt="Hình 1">
-        <img class="large" src="https://i.imgur.com/r13HEML.jpeg" alt="Hình 2">
-        <img class="small" src="https://i.imgur.com/6hwFKUp.png" alt="Hình 3">
+    <div class="letter" id="letter" onclick="openLetter()">
+        "💐 NHÂN NGÀY 20/10,<br> Con chúc MẸ thật hạnh phúc và ngập tràn yêu thương! 🌺🌺🌺<br>
+         Em chúc CHỊ gái luôn vui vẻ, tươi tắn và sớm lấy chồng 🪻🌼"
     </div>
 
     <script>
         function openGift() {
             document.getElementById('giftBox').style.display = 'none'; // Ẩn hộp quà
-            document.getElementById('sunflowerBouquet').style.display = 'block'; // Hiện bó hoa
+            document.getElementById('sunflowerBouquet').style.display = 'block'; // Hiện bó hoa và hình ảnh
             document.getElementById('letter').style.display = 'block'; // Hiện thư
         }
 
         function openLetter() {
             document.getElementById('letter').style.display = 'none'; // Ẩn thư
-            document.getElementById('images').style.display = 'block'; // Hiện hình ảnh
         }
     </script>
 </body>
